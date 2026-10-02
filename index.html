@@ -10,15 +10,51 @@
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
-      background: #ffffff;
+      background: #dff0f8;
       text-align: center;
     }
     h1 {
       color: #b08968;
+    }
+          .cards {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .card {
+      width: 260px;
+      background: #ffffff;
+      border-radius: 16px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #4b3b2f;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .card-img {
+      height: 160px;
+      background: #bfe3f5;
+    }
+    .card h2 {
+      color: #b08968;
+      margin: 16px 12px 8px;
+      font-size: 20px;
+    }
+    .card p {
+      margin: 0 12px 20px;
+      font-size: 14px;
     }
   </style>
 <body>
   <h1>NINE TWO NINE SPECIALTY COFFEE</h1>
   <p>Redefining specialty coffee experience.</p>
 </body>
+    <div class="cards">
+    <a class="card" href="#">
+      <div class="card-img"></div>
+      <h2>ICE &amp; HOT COFFEE</h2>
+      <p>Everything made with coffee, hot or cold.</p>
+    </a>
+  </div>
 </html>
