@@ -60,3 +60,48 @@
       background: #ffffff;
       color: #3d6564;
       padding: 2px 12px;
+      border-radius: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .item:hover .price {
+      opacity: 1;
+    }
+    @media (hover: none) {
+      .price {
+        opacity: 1;
+      }
+    }
+    @media (hover: hover) {
+      .item:hover {
+        transform: scale(1.08);
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 14px;
+        border-bottom-color: transparent;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        position: relative;
+        z-index: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <p><a href="index.html">&larr; Back</a></p>
+  <h1>DESSERTS</h1>
+
+  <div class="menu">
+    <h2>Desserts</h2>
+    <div class="item"><span>Strawberry Chocolate Cup</span><span class="price">185</span></div>
+    <div class="item"><span>Strawberry Pistachio Cup</span><span class="price">195</span></div>
+    <div class="item"><span>Tiramisu</span><span class="price">165</span></div>
+    <div class="item"><span>Chocolate Cookie</span><span class="price">125</span></div>
+    <div class="item"><span>Chocolate Chip Cookie</span><span class="price">125</span></div>
+    <div class="item"><span>Honey Cake</span><span class="price">150</span></div>
+    <div class="item"><span>Muffin<small>Vanilla &amp; Choco</small></span><span class="price">100</span></div>
+    <div class="item"><span>San Sebastian<small>Plain &amp; Nutella &amp; Pistachio</small></span><span class="price">210 - 255 - 285</span></div>
+    <div class="item"><span>Cheesecake Plain<small>Lotus 30 &amp; Nutella 20 &amp; Pistachio 40 &amp; Caramel 10 &amp; Blueberry 15</small></span><span class="price">155</span></div>
+    <div class="item"><span>Chocolate Cake</span><span class="price">165</span></div>
+  </div>
+</body>
+</html>
