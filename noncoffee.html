@@ -76,6 +76,18 @@
         z-index: 1;
       }
     }
+        .item {
+      transition: transform 0.25s ease, background 0.25s, box-shadow 0.25s;
+    }
+    @media (hover: none) {
+      .item.active {
+        transform: scale(1.06);
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 14px;
+        border-bottom-color: transparent;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      }
+    }
   </style>
 </head>
 <body>
