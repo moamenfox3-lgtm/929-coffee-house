@@ -50,5 +50,17 @@
     <p style="text-align:center; margin-top:30px;">
     <a class="btn" href="https://wa.me/201110082978">contact us</a>
   </p>
+    <script>
+    const btn = document.getElementById("toggleBtn");
+    const info = document.getElementById("info");
+
+    btn.addEventListener("click", function () {
+      if (info.style.display === "none") {
+        info.style.display = "block";
+      } else {
+        info.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
