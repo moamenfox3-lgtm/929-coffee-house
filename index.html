@@ -94,6 +94,29 @@
       letter-spacing: 3px;
       font-variant: small-caps;
     }
+          .menu {
+      max-width: 500px;
+      margin: 30px auto;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 10px 24px;
+      text-align: left;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .item {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid #dff0f8;
+      color: #4b3b2f;
+    }
+    .item:last-child {
+      border-bottom: none;
+    }
+    .price {
+      color: #b08968;
+      font-weight: bold;
+    }
   </style>
 <body>
   <img class="logo" src="logs.png" alt="Nine Two Nine logo">
@@ -101,11 +124,15 @@
   <p>Redefining specialty coffee experience.</p>
 </body>
     <div class="cards">
-    <a class="card" href="#">
+        <a class="card" href="coffee.html">
            <div class="card-img">
         <img src="hot.png" alt="Ice and Hot Coffee">
       </div>
       <h2>ICE &amp; HOT COFFEE</h2>
+            <div class="menu">
+    <div class="item"><span>Latte</span><span class="price">XX EGP</span></div>
+    <div class="item"><span>Iced Latte</span><span class="price">XX EGP</span></div>
+  </div>
       <p>Everything made with coffee, hot or cold.</p>
     </a>
              <a class="card" href="#">
@@ -115,7 +142,7 @@
       <h2>NON-COFFEE</h2>
       <p>Smoothies, shakes, matcha and mojito.</p>
     </a>
-        <a class="card" href="coffee.html">
+        <a class="card" href="#">
       <div class="card-img">
         <img src="brewing.png" alt="Brewing Coffee">
       </div>
