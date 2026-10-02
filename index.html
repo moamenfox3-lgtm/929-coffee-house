@@ -50,15 +50,17 @@
     <p style="text-align:center; margin-top:30px;">
     <a class="btn" href="https://wa.me/201110082978">contact us</a>
   </p>
-    <script>
+      <script>
     const btn = document.getElementById("toggleBtn");
     const info = document.getElementById("info");
 
     btn.addEventListener("click", function () {
       if (info.style.display === "none") {
         info.style.display = "block";
+        btn.textContent = "إخفاء";
       } else {
         info.style.display = "none";
+        btn.textContent = "عن القهوة عندنا";
       }
     });
   </script>
