@@ -163,7 +163,8 @@
     <div class="item"><span>Espresso</span><span class="price">80</span></div>
     <div class="item"><span>Americano</span><span class="price">100</span></div>
     <div class="item"><span>Macchiato</span><span class="price">95</span></div>
-    <div class="item"><span>Latte</span><span class="price">115</span></div>
+        <div class="item"><span>Latte<small class="detail">اكتب هنا وصف المشروب</small></span><span class="price">115</span></div>
+
     <div class="item"><span>Ice Espresso Tonic</span><span class="price">115</span></div>
     <div class="item"><span>Flat White</span><span class="price">110</span></div>
     <div class="item"><span>Cortado</span><span class="price">100</span></div>
@@ -196,5 +197,19 @@
       observer.observe(item);
     });
   </script>
+    <script>
+    document.querySelectorAll(".item").forEach(function (item) {
+      item.addEventListener("click", function () {
+        const wasOpen = item.classList.contains("open");
+        document.querySelectorAll(".item.open").forEach(function (i) {
+          i.classList.remove("open");
+        });
+        if (!wasOpen) {
+          item.classList.add("open");
+        }
+      });
+    });
+  </script>
+
 </body>
 </html>
