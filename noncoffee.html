@@ -118,5 +118,16 @@
     <div class="item"><span>Raspberry Mojito</span><span class="price">130</span></div>
     <div class="item"><span>Pineapple Blue Curaçao Mojito</span><span class="price">130</span></div>
   </div>
+    <script>
+    const items = document.querySelectorAll(".item");
+    const observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        entry.target.classList.toggle("active", entry.isIntersecting);
+      });
+    }, { rootMargin: "-45% 0px -45% 0px" });
+    items.forEach(function (item) {
+      observer.observe(item);
+    });
+  </script>
 </body>
 </html>
