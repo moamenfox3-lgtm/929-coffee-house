@@ -22,10 +22,53 @@
     a {
       color: #b08968;
     }
+        .menu {
+      max-width: 500px;
+      margin: 30px auto;
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 10px 24px;
+      text-align: left;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 14px 0;
+      border-bottom: 1px solid #dff0f8;
+      color: #4b3b2f;
+      font-family: 'Raleway', Arial, sans-serif;
+      font-weight: 300;
+      letter-spacing: 2px;
+    }
+    .item:last-child {
+      border-bottom: none;
+    }
+    .item span:first-child {
+      min-width: 180px;
+    }
+    .price {
+      color: #b08968;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .item:hover .price {
+      opacity: 1;
+    }
+    @media (hover: none) {
+      .price {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 <body>
   <p><a href="index.html">&larr; Back</a></p>
   <h1>ICE &amp; HOT COFFEE</h1>
+    <div class="menu">
+    <div class="item"><span>Latte</span><span class="price">XX EGP</span></div>
+    <div class="item"><span>Iced Latte</span><span class="price">XX EGP</span></div>
+  </div>
 </body>
 </html>
