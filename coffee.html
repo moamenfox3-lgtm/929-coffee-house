@@ -120,6 +120,38 @@
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
       }
     }
+        .detail {
+      display: none;
+    }
+    @media (hover: none) {
+      .item {
+        cursor: pointer;
+      }
+      .item.open {
+        aspect-ratio: 1 / 1;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        text-align: center;
+        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 18px;
+        border-bottom-color: transparent;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      }
+      .item.open span:first-child {
+        flex: none;
+      }
+      .item.open .detail {
+        display: block;
+        margin-top: 8px;
+        font-size: 13px;
+        font-weight: 300;
+        letter-spacing: 1px;
+        opacity: 0.85;
+      }
+    }
+
   </style>
 </head>
 <body>
