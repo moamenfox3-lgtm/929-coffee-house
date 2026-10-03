@@ -147,5 +147,10 @@
       observer.observe(item);
     });
   </script>
+    <script>
+    document.querySelectorAll(".item").forEach(function (item, i) {
+      item.style.animationDelay = (i * 0.07) + "s";
+    });
+  </script>
 </body>
 </html>
