@@ -32,4 +32,69 @@
       color: #ffffff;
       font-weight: 300;
       letter-spacing: 4px;
-      margin:
+      margin: 28px 0 6px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #ffffff;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 14px 12px;
+      color: #eef6f6;
+      letter-spacing: 2px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      transition: transform 0.25s ease, background 0.25s, box-shadow 0.25s;
+    }
+    .item span:first-child {
+      flex: 0 1 250px;
+    }
+    .price {
+      background: #ffffff;
+      color: #3d6564;
+      padding: 2px 12px;
+      border-radius: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .item:hover .price {
+      opacity: 1;
+    }
+    @media (hover: none) {
+      .price {
+        opacity: 1;
+      }
+    }
+    @media (hover: hover) {
+      .item:hover {
+        transform: scale(1.08);
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 14px;
+        border-bottom-color: transparent;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        position: relative;
+        z-index: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <p><a href="index.html">&larr; Back</a></p>
+  <h1>EXTRAS</h1>
+
+  <div class="menu">
+    <h2>Extras</h2>
+    <div class="item"><span>Sparkling Water</span><span class="price">60</span></div>
+    <div class="item"><span>Mineral Water</span><span class="price">30</span></div>
+    <div class="item"><span>Espresso Shot</span><span class="price">60</span></div>
+    <div class="item"><span>Extra Milk</span><span class="price">35</span></div>
+    <div class="item"><span>Toffee Nut</span><span class="price">55</span></div>
+    <div class="item"><span>Alternative Milk</span><span class="price">85</span></div>
+    <div class="item"><span>Flavour</span><span class="price">50</span></div>
+    <div class="item"><span>Whipped Cream</span><span class="price">45</span></div>
+    <div class="item"><span>Extra Sauce</span><span class="price">50</span></div>
+    <div class="item"><span>Pistachio Flavor</span><span class="price">85</span></div>
+  </div>
+</body>
+</html>
