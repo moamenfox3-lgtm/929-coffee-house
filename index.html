@@ -142,6 +142,31 @@
       transform: translateY(-4px);
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     }
+          @keyframes domino {
+      0% {
+        opacity: 0;
+        transform: translateX(-60px) rotate(-12deg);
+      }
+      60% {
+        opacity: 1;
+        transform: translateX(8px) rotate(3deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0);
+      }
+    }
+    .card {
+      animation: domino 0.6s ease-out backwards;
+    }
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.22s; }
+    .card:nth-child(3) { animation-delay: 0.34s; }
+    .card:nth-child(4) { animation-delay: 0.46s; }
+    .card:nth-child(5) { animation-delay: 0.58s; }
+    .card:nth-child(6) { animation-delay: 0.7s; }
+    .card:nth-child(7) { animation-delay: 0.82s; }
+    .card:nth-child(8) { animation-delay: 0.94s; }
   </style>
 <body>
   <img class="logo" src="logs.png" alt="Nine Two Nine logo">
