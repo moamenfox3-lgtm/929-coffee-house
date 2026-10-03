@@ -167,6 +167,29 @@
     .card:nth-child(6) { animation-delay: 0.7s; }
     .card:nth-child(7) { animation-delay: 0.82s; }
     .card:nth-child(8) { animation-delay: 0.94s; }
+          @keyframes float {
+      0%, 100% {
+        translate: 0 0;
+      }
+      50% {
+        translate: 0 -6px;
+      }
+    }
+    .card-img img {
+      animation: float 4s ease-in-out infinite;
+    }
+    .card:nth-child(2n) .card-img img {
+      animation-delay: -1.3s;
+    }
+    .card:nth-child(3n) .card-img img {
+      animation-delay: -2.6s;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .card,
+      .card-img img {
+        animation: none;
+      }
+    }
   </style>
 <body>
   <img class="logo" src="logs.png" alt="Nine Two Nine logo">
