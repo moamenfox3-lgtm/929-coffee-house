@@ -47,3 +47,48 @@
       transition: transform 0.25s ease, background 0.25s, box-shadow 0.25s;
     }
     .item span:first-child {
+      flex: 0 1 250px;
+    }
+    .price {
+      background: #ffffff;
+      color: #3d6564;
+      padding: 2px 12px;
+      border-radius: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    .item:hover .price {
+      opacity: 1;
+    }
+    @media (hover: none) {
+      .price {
+        opacity: 1;
+      }
+    }
+    @media (hover: hover) {
+      .item:hover {
+        transform: scale(1.08);
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 14px;
+        border-bottom-color: transparent;
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        position: relative;
+        z-index: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <p><a href="index.html">&larr; Back</a></p>
+  <h1>BREAKFAST</h1>
+
+  <div class="menu">
+    <h2>Breakfast</h2>
+    <div class="item"><span>Roast Beef &amp; Omelette Tortilla</span><span class="price">300</span></div>
+    <div class="item"><span>Cheesy Mushroom Sourdough Plate</span><span class="price">285</span></div>
+    <div class="item"><span>Mexican Avocado Salad</span><span class="price">235</span></div>
+    <div class="item"><span>Grilled Chicken &amp; Avocado Plate</span><span class="price">310</span></div>
+  </div>
+</body>
+</html>
