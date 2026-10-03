@@ -96,6 +96,24 @@
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
       }
     }
+        @keyframes itemDrop {
+      0% {
+        opacity: 0;
+        transform: translateX(-40px) rotate(-4deg);
+      }
+      60% {
+        opacity: 1;
+        transform: translateX(6px) rotate(1deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0);
+      }
+    }
+    .item {
+      transform-origin: left center;
+      animation: itemDrop 0.5s ease-out backwards;
+    }
   </style>
 </head>
 <body>
