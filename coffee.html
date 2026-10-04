@@ -4,71 +4,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ice &amp; Hot Coffee | NINE TWO NINE</title>
+  <script>document.documentElement.classList.add("js");</script>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Raleway', Arial, sans-serif;
       margin: 0;
       padding: 20px;
-      background: #dff0f8;
+      background: #4a7f7e;
       text-align: center;
     }
-    h1 {
-      color: #b08968;
-      font-weight: 300;
-      letter-spacing: 6px;
-    }
-    a {
-      color: #b08968;
-    }
-    .menu {
-      max-width: 500px;
-      margin: 30px auto;
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 10px 24px;
-      text-align: left;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+    h1 { color: #fff; font-weight: 300; letter-spacing: 6px; }
+    a { color: #fff; }
+    .menu { max-width: 500px; margin: 30px auto; padding: 10px 24px; text-align: left; }
     .menu h2 {
-      color: #b08968;
+      display: inline-block;
+      color: #fff;
       font-weight: 300;
       letter-spacing: 4px;
-      margin: 20px 0 6px;
+      margin: 28px 0 6px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #fff;
     }
     .item {
       display: flex;
       align-items: center;
       gap: 24px;
-      padding: 14px 0;
-      border-bottom: 1px solid #dff0f8;
-      color: #4b3b2f;
+      padding: 14px 12px;
+      color: #eef6f6;
       letter-spacing: 2px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      transition: transform 0.25s ease, background 0.25s, box-shadow 0.25s;
     }
-    .item span:first-child {
-      flex: 0 1 250px;
+    .item span:first-child { flex: 0 1 300px; }
+    .detail {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      opacity: 0.85;
     }
     .price {
-      color: #b08968;
+      background: #fff;
+      color: #3d6564;
+      padding: 2px 12px;
+      border-radius: 14px;
+      white-space: nowrap;
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .item:hover .price {
-      opacity: 1;
-    }
-    @media (hover: none) {
-      .price {
-        opacity: 1;
-      }
-    }
-        .item {
-      padding: 14px 12px;
-      transition: transform 0.25s ease, background 0.25s, box-shadow 0.25s;
-    }
+    .item:hover .price { opacity: 1; }
+
     @media (hover: hover) {
       .item:hover {
         transform: scale(1.08);
-        background: #eaf6fc;
+        background: rgba(255, 255, 255, 0.15);
         border-radius: 14px;
         border-bottom-color: transparent;
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
@@ -76,57 +67,10 @@
         z-index: 1;
       }
     }
-        body {
-      background: #4a7f7e;
-    }
-    h1,
-    a,
-    .menu h2 {
-      color: #ffffff;
-    }
-    .menu {
-      background: transparent;
-      box-shadow: none;
-    }
-    .menu h2 {
-      display: inline-block;
-      border-bottom: 2px solid #ffffff;
-      padding-bottom: 6px;
-    }
-    .item {
-      color: #eef6f6;
-      border-bottom-color: rgba(255, 255, 255, 0.25);
-    }
-    .price {
-      background: #ffffff;
-      color: #3d6564;
-      padding: 2px 12px;
-      border-radius: 14px;
-    }
-    @media (hover: hover) {
-      .item:hover {
-        background: rgba(255, 255, 255, 0.15);
-      }
-    }
-        .item {
-      transition: transform 0.25s ease, background 0.25s, box-shadow 0.25s;
-    }
     @media (hover: none) {
-      .item.active {
-        transform: scale(1.06);
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 14px;
-        border-bottom-color: transparent;
-        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
-      }
-    }
-        .detail {
-      display: none;
-    }
-    @media (hover: none) {
-      .item {
-        cursor: pointer;
-      }
+      .price { opacity: 1; }
+      .item { cursor: pointer; }
+      .detail { display: none; }
       .item.open {
         aspect-ratio: 1 / 1;
         flex-direction: column;
@@ -139,37 +83,21 @@
         border-bottom-color: transparent;
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
       }
-      .item.open span:first-child {
-        flex: none;
-      }
-      .item.open .detail {
-        display: block;
-        margin-top: 8px;
-        font-size: 13px;
-        font-weight: 300;
-        letter-spacing: 1px;
-        opacity: 0.85;
-      }
-    }
-        @keyframes itemDrop {
-      0% {
-        opacity: 0;
-        transform: translateX(-40px) rotate(-4deg);
-      }
-      60% {
-        opacity: 1;
-        transform: translateX(6px) rotate(1deg);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0) rotate(0);
-      }
-    }
-    .item {
-      transform-origin: left center;
-      animation: itemDrop 0.5s ease-out backwards;
+      .item.open span:first-child { flex: none; }
+      .item.open .detail { display: block; margin-top: 8px; font-size: 13px; }
     }
 
+    @keyframes itemDrop {
+      0% { opacity: 0; transform: translateX(-40px) rotate(-4deg); }
+      60% { opacity: 1; transform: translateX(6px) rotate(1deg); }
+      100% { opacity: 1; transform: translateX(0) rotate(0); }
+    }
+    .js .item { opacity: 0; }
+    .js .item.in { opacity: 1; animation: itemDrop 0.5s ease-out backwards; }
+    @media (prefers-reduced-motion: reduce) {
+      .js .item { opacity: 1; }
+      .js .item.in { animation: none; }
+    }
   </style>
 </head>
 <body>
@@ -178,45 +106,49 @@
 
   <div class="menu">
     <h2>Classics</h2>
-    <div class="item"><span>Espresso</span><span class="price">80</span></div>
-    <div class="item"><span>Americano</span><span class="price">100</span></div>
-    <div class="item"><span>Macchiato</span><span class="price">95</span></div>
-        <div class="item"><span>Latte<small class="detail">اكتب هنا وصف المشروب</small></span><span class="price">115</span></div>
-
-    <div class="item"><span>Ice Espresso Tonic</span><span class="price">115</span></div>
-    <div class="item"><span>Flat White</span><span class="price">110</span></div>
-    <div class="item"><span>Cortado</span><span class="price">100</span></div>
-    <div class="item"><span>Cappuccino</span><span class="price">115</span></div>
-    <div class="item"><span>Mocha</span><span class="price">160</span></div>
+    <div class="item"><span>Espresso<small class="detail">A concentrated shot of freshly ground coffee.</small></span><span class="price">80</span></div>
+    <div class="item"><span>Americano<small class="detail">Espresso with hot water.</small></span><span class="price">100</span></div>
+    <div class="item"><span>Macchiato<small class="detail">Espresso marked with a dollop of milk foam.</small></span><span class="price">95</span></div>
+    <div class="item"><span>Latte<small class="detail">Espresso with steamed milk and a light layer of foam.</small></span><span class="price">115</span></div>
+    <div class="item"><span>Ice Espresso Tonic<small class="detail">Espresso over ice and tonic water.</small></span><span class="price">115</span></div>
+    <div class="item"><span>Flat White<small class="detail">Espresso with velvety steamed milk.</small></span><span class="price">110</span></div>
+    <div class="item"><span>Cortado<small class="detail">Espresso balanced with an equal amount of warm milk.</small></span><span class="price">100</span></div>
+    <div class="item"><span>Cappuccino<small class="detail">Espresso with steamed milk and thick milk foam.</small></span><span class="price">115</span></div>
+    <div class="item"><span>Mocha<small class="detail">Espresso with chocolate and steamed milk.</small></span><span class="price">160</span></div>
 
     <h2>Signature Drinks</h2>
-    <div class="item"><span>Salted Caramel Latte</span><span class="price">160</span></div>
-    <div class="item"><span>Spanish Latte</span><span class="price">165</span></div>
-    <div class="item"><span>Caramel Macchiato</span><span class="price">160</span></div>
-    <div class="item"><span>Tiramisu Frappe</span><span class="price">185</span></div>
-    <div class="item"><span>Pistachio Latte</span><span class="price">220</span></div>
-    <div class="item"><span>White Mocha Coffee</span><span class="price">160</span></div>
+    <div class="item"><span>Salted Caramel Latte<small class="detail">Espresso, steamed milk and salted caramel sauce.</small></span><span class="price">160</span></div>
+    <div class="item"><span>Spanish Latte<small class="detail">Espresso with milk and sweetened condensed milk.</small></span><span class="price">165</span></div>
+    <div class="item"><span>Caramel Macchiato<small class="detail">Espresso, steamed milk, caramel sauce and caramel flavour.</small></span><span class="price">160</span></div>
+    <div class="item"><span>Tiramisu Frappe<small class="detail">Blended milk and espresso with ladyfinger biscuits, digestive biscuits, chocolate sauce, vanilla powder and cream.</small></span><span class="price">185</span></div>
+    <div class="item"><span>Pistachio Latte<small class="detail">Espresso, steamed milk and pistachio sauce.</small></span><span class="price">220</span></div>
+    <div class="item"><span>White Mocha Coffee<small class="detail">Espresso with white chocolate and steamed milk.</small></span><span class="price">160</span></div>
 
     <h2>Iced &amp; Frappe</h2>
-    <div class="item"><span>Ice Latte</span><span class="price">125</span></div>
-    <div class="item"><span>Ice Dark Mocha</span><span class="price">160</span></div>
-    <div class="item"><span>Ice White Mocha</span><span class="price">160</span></div>
-    <div class="item"><span>Salted Caramel Frappe</span><span class="price">165</span></div>
-    <div class="item"><span>Dark Mocha Frappe</span><span class="price">165</span></div>
+    <div class="item"><span>Ice Latte<small class="detail">Espresso poured over cold milk and ice.</small></span><span class="price">125</span></div>
+    <div class="item"><span>Ice Dark Mocha<small class="detail">Espresso, dark chocolate and cold milk over ice.</small></span><span class="price">160</span></div>
+    <div class="item"><span>Ice White Mocha<small class="detail">Espresso, white chocolate and cold milk over ice.</small></span><span class="price">160</span></div>
+    <div class="item"><span>Salted Caramel Frappe<small class="detail">Blended iced coffee with salted caramel sauce and vanilla powder.</small></span><span class="price">165</span></div>
+    <div class="item"><span>Dark Mocha Frappe<small class="detail">Blended iced coffee with dark chocolate and vanilla powder.</small></span><span class="price">165</span></div>
   </div>
-    <script>
+
+  <script>
     const items = document.querySelectorAll(".item");
+
     const observer = new IntersectionObserver(function (entries) {
+      let n = 0;
       entries.forEach(function (entry) {
-        entry.target.classList.toggle("active", entry.isIntersecting);
+        if (entry.isIntersecting) {
+          entry.target.style.animationDelay = (n * 0.07) + "s";
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+          n++;
+        }
       });
-    }, { rootMargin: "-45% 0px -45% 0px" });
+    }, { threshold: 0.15 });
+
     items.forEach(function (item) {
       observer.observe(item);
-    });
-  </script>
-    <script>
-    document.querySelectorAll(".item").forEach(function (item) {
       item.addEventListener("click", function () {
         const wasOpen = item.classList.contains("open");
         document.querySelectorAll(".item.open").forEach(function (i) {
@@ -226,11 +158,6 @@
           item.classList.add("open");
         }
       });
-    });
-  </script>
-  <script>
-    document.querySelectorAll(".item").forEach(function (item, i) {
-      item.style.animationDelay = (i * 0.07) + "s";
     });
   </script>
 </body>
