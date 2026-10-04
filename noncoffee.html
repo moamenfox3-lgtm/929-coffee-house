@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Non-Coffee | NINE TWO NINE</title>
+  <script>document.documentElement.classList.add("js");</script>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
   <style>
     body {
@@ -13,28 +14,17 @@
       background: #4a7f7e;
       text-align: center;
     }
-    h1 {
-      color: #ffffff;
-      font-weight: 300;
-      letter-spacing: 6px;
-    }
-    a {
-      color: #ffffff;
-    }
-    .menu {
-      max-width: 500px;
-      margin: 30px auto;
-      padding: 10px 24px;
-      text-align: left;
-    }
+    h1 { color: #fff; font-weight: 300; letter-spacing: 6px; }
+    a { color: #fff; }
+    .menu { max-width: 500px; margin: 30px auto; padding: 10px 24px; text-align: left; }
     .menu h2 {
       display: inline-block;
-      color: #ffffff;
+      color: #fff;
       font-weight: 300;
       letter-spacing: 4px;
       margin: 28px 0 6px;
       padding-bottom: 6px;
-      border-bottom: 2px solid #ffffff;
+      border-bottom: 2px solid #fff;
     }
     .item {
       display: flex;
@@ -46,25 +36,26 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.25);
       transition: transform 0.25s ease, background 0.25s, box-shadow 0.25s;
     }
-    .item span:first-child {
-      flex: 0 1 250px;
+    .item span:first-child { flex: 0 1 300px; }
+    .detail {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      opacity: 0.85;
     }
     .price {
-      background: #ffffff;
+      background: #fff;
       color: #3d6564;
       padding: 2px 12px;
       border-radius: 14px;
+      white-space: nowrap;
       opacity: 0;
       transition: opacity 0.3s;
     }
-    .item:hover .price {
-      opacity: 1;
-    }
-    @media (hover: none) {
-      .price {
-        opacity: 1;
-      }
-    }
+    .item:hover .price { opacity: 1; }
+
     @media (hover: hover) {
       .item:hover {
         transform: scale(1.08);
@@ -76,35 +67,36 @@
         z-index: 1;
       }
     }
-        .item {
-      transition: transform 0.25s ease, background 0.25s, box-shadow 0.25s;
-    }
     @media (hover: none) {
-      .item.active {
-        transform: scale(1.06);
+      .price { opacity: 1; }
+      .item { cursor: pointer; }
+      .detail { display: none; }
+      .item.open {
+        aspect-ratio: 1 / 1;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        text-align: center;
+        transform: scale(1.05);
         background: rgba(255, 255, 255, 0.15);
-        border-radius: 14px;
+        border-radius: 18px;
         border-bottom-color: transparent;
         box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
       }
+      .item.open span:first-child { flex: none; }
+      .item.open .detail { display: block; margin-top: 8px; font-size: 13px; }
     }
-        @keyframes itemDrop {
-      0% {
-        opacity: 0;
-        transform: translateX(-40px) rotate(-4deg);
-      }
-      60% {
-        opacity: 1;
-        transform: translateX(6px) rotate(1deg);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0) rotate(0);
-      }
+
+    @keyframes itemDrop {
+      0% { opacity: 0; transform: translateX(-40px) rotate(-4deg); }
+      60% { opacity: 1; transform: translateX(6px) rotate(1deg); }
+      100% { opacity: 1; transform: translateX(0) rotate(0); }
     }
-    .item {
-      transform-origin: left center;
-      animation: itemDrop 0.5s ease-out backwards;
+    .js .item { opacity: 0; }
+    .js .item.in { opacity: 1; animation: itemDrop 0.5s ease-out backwards; }
+    @media (prefers-reduced-motion: reduce) {
+      .js .item { opacity: 1; }
+      .js .item.in { animation: none; }
     }
   </style>
 </head>
@@ -114,44 +106,57 @@
 
   <div class="menu">
     <h2>Non Coffee</h2>
-    <div class="item"><span>Shake (Blueberry, Vanilla, Caramel)</span><span class="price">140</span></div>
-    <div class="item"><span>Hot Chocolate</span><span class="price">160</span></div>
-    <div class="item"><span>Tea</span><span class="price">90</span></div>
-    <div class="item"><span>Iced Tea (Passion Fruit, Peach)</span><span class="price">115</span></div>
-   
+    <div class="item"><span>Shake (Blueberry, Vanilla, Caramel)<small class="detail">A thick blended milkshake with vanilla powder, in your choice of flavour.</small></span><span class="price">140</span></div>
+    <div class="item"><span>Hot Chocolate<small class="detail">Steamed milk with chocolate.</small></span><span class="price">160</span></div>
+    <div class="item"><span>Tea<small class="detail">A freshly brewed cup of tea.</small></span><span class="price">90</span></div>
+    <div class="item"><span>Iced Tea (Passion Fruit, Peach)<small class="detail">Iced tea with passion fruit or peach flavour.</small></span><span class="price">115</span></div>
 
     <h2>Matcha</h2>
-     <div class="item"><span>Matcha Frappe</span><span class="price">165</span></div>
-    <div class="item"><span>Matcha Latte</span><span class="price">125</span></div>
-    <div class="item"><span>Pistachio Matcha Frappe</span><span class="price">235</span></div>
-    <div class="item"><span>Matcha Vanilla Frappe</span><span class="price">165</span></div>
-    <div class="item"><span>Matcha Hazelnut Frappe</span><span class="price">165</span></div>
-    <div class="item"><span>Matcha Caramel Frappe</span><span class="price">165</span></div>
-    <div class="item"><span>Mango Matcha</span><span class="price">175</span></div>
-        <div class="item"><span>Strawberry Matcha</span><span class="price">175</span></div>
+    <div class="item"><span>Matcha Latte<small class="detail">Matcha with milk.</small></span><span class="price">125</span></div>
+    <div class="item"><span>Matcha Frappe<small class="detail">Blended matcha with milk and vanilla powder.</small></span><span class="price">165</span></div>
+    <div class="item"><span>Pistachio Matcha Frappe<small class="detail">Blended matcha with milk, pistachio and vanilla powder.</small></span><span class="price">235</span></div>
+    <div class="item"><span>Matcha Vanilla Frappe<small class="detail">Blended matcha with milk and vanilla powder.</small></span><span class="price">165</span></div>
+    <div class="item"><span>Matcha Hazelnut Frappe<small class="detail">Blended matcha with milk, hazelnut and vanilla powder.</small></span><span class="price">165</span></div>
+    <div class="item"><span>Matcha Caramel Frappe<small class="detail">Blended matcha with milk, caramel and vanilla powder.</small></span><span class="price">165</span></div>
+    <div class="item"><span>Mango Matcha<small class="detail">Matcha with milk and mango.</small></span><span class="price">175</span></div>
+    <div class="item"><span>Strawberry Matcha<small class="detail">Matcha with milk and strawberry.</small></span><span class="price">175</span></div>
 
     <h2>Mojito</h2>
-    <div class="item"><span>Peach Mojito</span><span class="price">130</span></div>
-    <div class="item"><span>Passion Fruit Mojito</span><span class="price">130</span></div>
-    <div class="item"><span>Strawberry Mojito</span><span class="price">130</span></div>
-    <div class="item"><span>Blueberry Mojito</span><span class="price">130</span></div>
-    <div class="item"><span>Raspberry Mojito</span><span class="price">130</span></div>
-    <div class="item"><span>Pineapple Blue Curaçao Mojito</span><span class="price">130</span></div>
+    <div class="item"><span>Peach Mojito<small class="detail">Tonic, soda, peach flavour, lemon syrup and mint.</small></span><span class="price">130</span></div>
+    <div class="item"><span>Passion Fruit Mojito<small class="detail">Tonic, soda, passion fruit flavour, lemon syrup and mint.</small></span><span class="price">130</span></div>
+    <div class="item"><span>Strawberry Mojito<small class="detail">Tonic, soda, strawberry flavour, lemon syrup and mint.</small></span><span class="price">130</span></div>
+    <div class="item"><span>Blueberry Mojito<small class="detail">Tonic, soda, blueberry flavour, lemon syrup and mint.</small></span><span class="price">130</span></div>
+    <div class="item"><span>Raspberry Mojito<small class="detail">Tonic, soda, raspberry flavour, lemon syrup and mint.</small></span><span class="price">130</span></div>
+    <div class="item"><span>Pineapple Mojito<small class="detail">Tonic, soda, pineapple flavour, lemon syrup and mint.</small></span><span class="price">130</span></div>
+    <div class="item"><span>Blue Curaçao Mojito<small class="detail">Tonic, soda, kiwi syrup and blue curaçao syrup.</small></span><span class="price">130</span></div>
   </div>
-    <script>
+
+  <script>
     const items = document.querySelectorAll(".item");
+
     const observer = new IntersectionObserver(function (entries) {
+      let n = 0;
       entries.forEach(function (entry) {
-        entry.target.classList.toggle("active", entry.isIntersecting);
+        if (entry.isIntersecting) {
+          entry.target.style.animationDelay = (n * 0.07) + "s";
+          entry.target.classList.add("in");
+          observer.unobserve(entry.target);
+          n++;
+        }
       });
-    }, { rootMargin: "-45% 0px -45% 0px" });
+    }, { threshold: 0.15 });
+
     items.forEach(function (item) {
       observer.observe(item);
-    });
-  </script>
-    <script>
-    document.querySelectorAll(".item").forEach(function (item, i) {
-      item.style.animationDelay = (i * 0.07) + "s";
+      item.addEventListener("click", function () {
+        const wasOpen = item.classList.contains("open");
+        document.querySelectorAll(".item.open").forEach(function (i) {
+          i.classList.remove("open");
+        });
+        if (!wasOpen) {
+          item.classList.add("open");
+        }
+      });
     });
   </script>
 </body>
